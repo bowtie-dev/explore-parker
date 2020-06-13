@@ -7,31 +7,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-
-import Header from './header';
-
 const Layout = ({ children }) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-  	`);
-
 	return (
-		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
-			<main>{children}</main>
+		<div className="h-screen flex flex-col bg-parchment-500">
+			<main className="flex-1">{children}</main>
 			<footer>
-          			© {new Date().getFullYear()}, Built with
-				{' '}
-				<a href="https://www.gatsbyjs.org">Gatsby</a>
+				<div className="container text-center text-sm py-4">
+					© {new Date().getFullYear()} JMG
+				</div>
 			</footer>
-		</>
+		</div>
 	);
 };
 
