@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import EmailForm from '../components/email-signup';
 
 const IndexPage = () => (
 	<Layout>
@@ -11,6 +12,8 @@ const IndexPage = () => (
 				<h1 className="font-graduate">Explore Parker</h1>
 				<h4 className="font-graduate mb-6">(Coming Soon)</h4>
 				<p>The goal of this website is to provide a platform to support locally owned and operated businesses, clubs, schools, and other organizations. This mission will hopefully be fulfilled by accumulating crowdsourced content that inspires community and purpose.</p>
+
+				<EmailForm />
 			</div>
 		</section>
 	</Layout>
