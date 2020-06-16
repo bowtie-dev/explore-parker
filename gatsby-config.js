@@ -16,6 +16,27 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'businesses',
+				path: `${__dirname}/src/businesses`
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-page-creator',
+			options: {
+			  path: `${__dirname}/src/businesses`,
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-mdx',
+			options: {
+				defaultLayouts: {
+					default: require.resolve('./src/components/layout.js'),
+				}
+			}
+		},
+		{
 			resolve: 'gatsby-transformer-remark',
 			options: {
 			  	plugins: [
